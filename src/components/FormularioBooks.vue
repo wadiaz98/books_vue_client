@@ -27,7 +27,7 @@ export default {
       type: String,
       required: true
     },
-    libro:{git init
+    libro:{
       type:Object
     },
   },
