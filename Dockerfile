@@ -14,6 +14,10 @@ COPY . .
 
 RUN npm run build
 
+ARG VUE_APP_HOST
+ARG VUE_APP_PORT
+ARG VUE_APP_PATH
+
 EXPOSE 8080
 
 CMD [ "http-server", "dist" ]
