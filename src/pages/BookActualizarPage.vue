@@ -15,12 +15,7 @@ import formularioBooks from '@/components/FormularioBooks.vue';
 import { getBookFacade } from '@/clients/clientBooks.js';
 
 export default {
-  props:{
-    id:{
-      type: Number,
-      default: null
-    }
-  },
+
   components: {
     formularioBooks
   },
@@ -45,18 +40,6 @@ export default {
       }
     }
   },
-  watch: {
-    id: {
-      handler(newVal, oldVal) {
-        if (newVal !== oldVal) {
-          this.bookId = newVal;
-          this.fetchBook()
-        }
-      },
-      deep: true,
-      immediate: true
-    }
-  }
 };
 </script>
 
