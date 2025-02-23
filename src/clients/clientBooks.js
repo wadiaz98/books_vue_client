@@ -1,8 +1,10 @@
 import axios from 'axios';
 
-const ip = '127.0.0.1';
-const port = '80';
-const path = 'app-books1/books'
+const ip = process.env.VUE_APP_HOST;
+const port = process.env.VUE_APP_PORT;
+const path = process.env.VUE_APP_PATH;
+
+axios.defaults.headers.common['Content-Type'] = 'application/json';
 
 const createBook = async (body) => {
     const data = axios.post(`http://${ip}:${port}/${path}`, body)
@@ -20,6 +22,7 @@ const getBook = async (id) => {
     const data = axios.get(`http://${ip}:${port}/${path}/${id}`)
         .then(response => response.data);
     return data;
+    console.log( "Libro: " + data);
 };
 
 const updateBook = async (id, body) => {
